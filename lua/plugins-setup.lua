@@ -26,15 +26,15 @@ if not status then
 end
 
 return packer.startup(function(use)
-    
     -- package manager
     use("wbthomason/packer.nvim")
 
-    -- preferred colorscheme
+    -- colorscheme
     use("morhetz/gruvbox")
+    use("joshdick/onedark.vim")
 
     -- helps with commenting stuff in code
-    use("numToStr/Comment.nvim") 
+    use("numToStr/Comment.nvim")
 
     -- lua functions that many plugins use
     use("nvim-lua/plenary.nvim")
@@ -49,7 +49,7 @@ return packer.startup(function(use)
     use("nvim-lualine/lualine.nvim")
 
     -- telescope fuzzy finding
-    use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})  
+    use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use({"nvim-telescope/telescope.nvim", branch = "0.1.x"})
 
     -- autocompletion
@@ -68,6 +68,10 @@ return packer.startup(function(use)
 
     -- configuring lsp servers
     use("neovim/nvim-lspconfig")
+    use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+    use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+    use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+    use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
     if packer_bootstrap then
         require("packer").sync()
