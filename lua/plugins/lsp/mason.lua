@@ -18,5 +18,6 @@ mason_lspconfig.setup({
         "tailwindcss",
         "sumneko_lua",
         "rust_analyzer",
+        "clangd",
     },
 })

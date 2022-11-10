@@ -9,6 +9,9 @@ require("plugins.nvim-tree")
 require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.nvim-cmp")
+require("plugins.autopairs")
+require("plugins.treesitter")
+require("plugins.gitsigns")
 
 -- lsp setup modules
 require("plugins.lsp.mason")
